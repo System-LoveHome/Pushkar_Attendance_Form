@@ -244,30 +244,6 @@
   }
   .type-btn.active-out .t-label { color: var(--red); }
 
-  /* ── TIME NOTICE ── */
-  .time-notice {
-    background: #fffbeb;
-    border: 1px solid #fcd34d;
-    border-radius: 8px;
-    padding: 9px 12px;
-    font-size: 11px;
-    font-weight: 500;
-    color: #92400e;
-    margin-top: 10px;
-    display: none;
-  }
-  .time-notice.ok {
-    background: #f0fdf4;
-    border-color: #86efac;
-    color: #166534;
-  }
-  .time-notice.warn {
-    background: #fffbeb;
-    border-color: #fcd34d;
-    color: #92400e;
-    display: flex;
-  }
-
   /* ── LOCATION ── */
   .loc-card {
     display: flex;
@@ -534,10 +510,6 @@ const CONFIG = {
   OFFICE_LAT: 26.9124,
   OFFICE_LNG: 75.7873,
   FENCE_RADIUS_METERS: 100,
-  CHECKIN_START:  "08:00",
-  CHECKIN_END:    "11:00",
-  CHECKOUT_START: "17:00",
-  CHECKOUT_END:   "20:00",
   DEPARTMENTS: [
     "Sales", "Marketing", "Construction", "Finance",
     "Admin", "HR", "Operations", "IT", "Management"
@@ -633,7 +605,6 @@ const CONFIG = {
         <span class="t-label">Check Out</span>
       </div>
     </div>
-    <div id="time-window-notice" class="time-notice"></div>
   </div>
 
   <!-- Location -->
@@ -714,7 +685,6 @@ document.addEventListener('DOMContentLoaded', () => {
   });
   updateDateTime();
   setInterval(updateDateTime, 1000);
-  updateTimeNotice('Check-in');
   captureLocation();
 });
 
@@ -733,23 +703,7 @@ function selectType(type) {
   document.getElementById('attendanceType').value = type;
   document.getElementById('btn-checkin').className = type === 'Check-in' ? 'type-btn active-in' : 'type-btn';
   document.getElementById('btn-checkout').className = type === 'Check-out' ? 'type-btn active-out' : 'type-btn';
-  updateTimeNotice(type);
 }
-function updateTimeNotice(type) {
-  const n = document.getElementById('time-window-notice');
-  const now = new Date();
-  const hhmm = now.getHours().toString().padStart(2,'0') + ':' + now.getMinutes().toString().padStart(2,'0');
-  const [s, e] = type === 'Check-in'
-    ? [CONFIG.CHECKIN_START, CONFIG.CHECKIN_END]
-    : [CONFIG.CHECKOUT_START, CONFIG.CHECKOUT_END];
-  const inW = hhmm >= s && hhmm <= e;
-  n.style.display = 'block';
-  n.className = 'time-notice ' + (inW ? 'ok' : 'warn');
-  n.textContent = inW
-    ? `✓ ${type} window is open: ${s} – ${e}`
-    : `⚠ ${type} allowed only ${s} – ${e}  (Now: ${hhmm})`;
-}
-
 // ── Location ──
 let locationCaptured = false;
 function captureLocation() {
@@ -808,10 +762,6 @@ function validateForm() {
     else { el.classList.remove('invalid'); document.getElementById(eid).textContent = ''; }
   });
   if (!locationCaptured) { document.getElementById('err-location').textContent = 'Location is required. Tap the card above.'; ok = false; }
-  const now = new Date();
-  const hhmm = now.getHours().toString().padStart(2,'0') + ':' + now.getMinutes().toString().padStart(2,'0');
-  const [s,e] = currentType === 'Check-in' ? [CONFIG.CHECKIN_START, CONFIG.CHECKIN_END] : [CONFIG.CHECKOUT_START, CONFIG.CHECKOUT_END];
-  if (hhmm < s || hhmm > e) { showToast(`${currentType} allowed only ${s}–${e}`, 'error'); ok = false; }
   return ok;
 }
 
