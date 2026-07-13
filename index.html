@@ -16,8 +16,6 @@
   }
   *{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent;}
   body{background:var(--bg);color:var(--text);font-family:'Poppins',sans-serif;min-height:100vh;display:flex;flex-direction:column;}
-
-  /* HEADER */
   .header{background:var(--red-grad);position:relative;overflow:hidden;}
   .header::before{content:'';position:absolute;top:-40px;right:-40px;width:160px;height:160px;border-radius:50%;background:rgba(255,255,255,0.06);}
   .header-inner{position:relative;z-index:1;padding:18px 20px 16px;display:flex;align-items:center;gap:14px;}
@@ -27,20 +25,13 @@
   .brand-name span{color:var(--gold2);}
   .brand-tagline{font-family:'Noto Sans Devanagari',sans-serif;font-size:11px;color:rgba(255,255,255,0.75);margin-top:3px;}
   .gold-strip{height:4px;background:var(--gold-grad);}
-
-  /* DATETIME */
   .datetime-bar{background:var(--white);border-bottom:1px solid var(--border);padding:9px 20px;display:flex;justify-content:space-between;align-items:center;}
   #live-date{font-size:12px;color:var(--muted);font-weight:500;}
   #live-time{font-size:15px;font-weight:700;color:var(--red);}
-
   .main{flex:1;padding:18px 16px 48px;max-width:480px;margin:0 auto;width:100%;}
-
-  /* CARD */
   .card{background:var(--white);border-radius:var(--radius);box-shadow:var(--shadow);padding:18px;margin-bottom:14px;border:1px solid var(--border);}
   .card-title{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:1.8px;color:var(--red);margin-bottom:14px;display:flex;align-items:center;gap:7px;}
   .card-title::after{content:'';flex:1;height:1px;background:linear-gradient(90deg,var(--red-light),transparent);}
-
-  /* BANNERS */
   .prefill-badge{display:flex;align-items:center;gap:10px;background:linear-gradient(135deg,#fff8f0,#fff);border:1.5px solid var(--gold);border-radius:10px;padding:10px 14px;margin-bottom:14px;}
   .prefill-badge .pb-icon{font-size:18px;}
   .prefill-badge .pb-text{font-size:11px;color:var(--gold);font-weight:600;}
@@ -48,8 +39,6 @@
   .not-found-banner{background:#fff3cd;border:1.5px solid #ffc107;border-radius:10px;padding:12px 14px;margin-bottom:14px;font-size:12px;color:#856404;font-weight:500;line-height:1.5;}
   .no-email-banner{background:var(--red-light);border:1.5px solid var(--red);border-radius:10px;padding:16px;font-size:13px;color:var(--red);font-weight:500;line-height:1.6;text-align:center;}
   .loading-banner{background:#f0f9ff;border:1.5px solid #7dd3fc;border-radius:10px;padding:12px 14px;margin-bottom:14px;font-size:12px;color:#0369a1;font-weight:500;display:flex;align-items:center;gap:10px;}
-
-  /* FIELDS */
   .field{margin-bottom:12px;}
   .field:last-child{margin-bottom:0;}
   label{display:block;font-size:11px;font-weight:600;color:var(--muted);margin-bottom:5px;}
@@ -60,6 +49,29 @@
   input[type="text"]::placeholder{color:#b0b5c0;font-weight:400;}
   input.invalid{border-color:var(--red)!important;}
   .field-error{font-size:11px;color:var(--red);margin-top:4px;font-weight:500;}
+
+  /* SHIFT BADGE */
+  .shift-badge{
+    display:flex;align-items:center;gap:10px;
+    border-radius:10px;padding:10px 14px;margin-top:12px;
+  }
+  .shift-badge.shift-8{background:#f0fdf4;border:1.5px solid #16a34a;}
+  .shift-badge.shift-12{background:#fffbeb;border:1.5px solid #d97706;}
+  .shift-badge .sb-icon{font-size:20px;}
+  .shift-badge .sb-info{flex:1;}
+  .shift-badge .sb-title{font-size:12px;font-weight:700;}
+  .shift-badge.shift-8  .sb-title{color:#16a34a;}
+  .shift-badge.shift-12 .sb-title{color:#d97706;}
+  .shift-badge .sb-sub{font-size:11px;color:var(--muted);margin-top:2px;}
+
+  /* EXPECTED CHECKOUT NOTICE */
+  .checkout-notice{
+    background:#eff6ff;border:1.5px solid #3b82f6;border-radius:10px;
+    padding:10px 14px;margin-top:10px;display:none;
+  }
+  .checkout-notice .cn-label{font-size:11px;font-weight:600;color:#1d4ed8;margin-bottom:2px;}
+  .checkout-notice .cn-time{font-size:18px;font-weight:800;color:#1d4ed8;}
+  .checkout-notice .cn-sub{font-size:11px;color:var(--muted);margin-top:2px;}
 
   /* TYPE TOGGLE */
   .type-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
@@ -97,7 +109,6 @@
   .selfie-placeholder .sp-title{font-size:13px;font-weight:700;color:var(--muted);}
   .selfie-placeholder .sp-sub{font-size:11px;color:#b0b5c0;text-align:center;line-height:1.5;}
   .selfie-btn{background:var(--red-grad);border:none;border-radius:10px;padding:11px 20px;font-family:'Poppins',sans-serif;font-size:13px;font-weight:700;color:#fff;cursor:pointer;display:flex;align-items:center;gap:8px;margin-top:4px;}
-  /* Camera view */
   .camera-view{display:none;flex-direction:column;align-items:center;gap:12px;padding:14px;}
   .camera-view.active{display:flex;}
   #camera-video{width:100%;max-width:360px;border-radius:10px;background:#000;transform:scaleX(-1);}
@@ -105,7 +116,6 @@
   .capture-btn{background:var(--red-grad);border:none;border-radius:50%;width:64px;height:64px;display:flex;align-items:center;justify-content:center;font-size:26px;cursor:pointer;box-shadow:0 4px 16px rgba(200,16,46,0.4);transition:transform .15s;}
   .capture-btn:active{transform:scale(.92);}
   .retake-btn{background:transparent;border:2px solid var(--border);border-radius:10px;padding:10px 18px;font-family:'Poppins',sans-serif;font-size:12px;font-weight:600;color:var(--muted);cursor:pointer;}
-  /* Preview */
   .photo-preview{display:none;flex-direction:column;align-items:center;gap:10px;padding:14px;}
   .photo-preview.active{display:flex;}
   #preview-img{width:100%;max-width:260px;border-radius:10px;border:3px solid #16a34a;}
@@ -136,6 +146,14 @@
   .success-row .sk{color:var(--muted);font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.5px;}
   .success-row .sv{font-weight:600;color:var(--text);}
   .sv.present{color:#16a34a;}.sv.outside{color:var(--gold);}
+  /* Expected checkout highlight on success */
+  .success-checkout-box{
+    background:#fffbeb;border:1.5px solid #d97706;border-radius:10px;
+    padding:12px 16px;margin-top:14px;text-align:center;width:100%;
+  }
+  .success-checkout-box .scb-label{font-size:11px;color:#92400e;font-weight:600;margin-bottom:2px;}
+  .success-checkout-box .scb-time{font-size:22px;font-weight:800;color:#d97706;}
+  .success-checkout-box .scb-note{font-size:10px;color:var(--muted);margin-top:2px;}
   .again-btn{margin-top:24px;background:transparent;border:2px solid var(--border);border-radius:var(--radius);padding:12px 30px;font-family:'Poppins',sans-serif;font-size:13px;font-weight:600;color:var(--muted);cursor:pointer;}
 
   /* FOOTER */
@@ -151,8 +169,6 @@
   .overlay-text{font-size:13px;font-weight:600;color:var(--muted);}
   .overlay-logo{font-size:11px;color:var(--gold);font-weight:700;letter-spacing:2px;text-transform:uppercase;}
   .overlay-progress{font-size:11px;color:var(--muted);margin-top:-8px;}
-
-  /* TOAST */
   .toast-wrap{position:fixed;top:16px;left:50%;transform:translateX(-50%);z-index:999;width:calc(100% - 32px);max-width:420px;pointer-events:none;}
   .toast{background:var(--white);border-radius:10px;padding:12px 16px;font-size:13px;font-weight:500;display:flex;align-items:center;gap:10px;box-shadow:0 8px 32px rgba(0,0,0,0.15);margin-bottom:8px;animation:slideDown .3s ease;border-left:4px solid var(--gold);}
   .toast.error{border-left-color:var(--red);}
@@ -163,11 +179,9 @@
 </head>
 <body>
 
-<!-- ══ EDIT THIS ══════════════════════════════════════════ -->
 <script>
   var APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxKrkb8AXKVTAVncCRuwUYGB8UtqlTUMjs9QiStcSaVH3YbVmyyC2obovJaCQnB3Hc2/exec";
 </script>
-<!-- ══════════════════════════════════════════════════════ -->
 
 <div class="overlay" id="overlay">
   <div class="big-spinner"></div>
@@ -205,7 +219,7 @@
   <span id="live-time">—:—</span>
 </div>
 
-<!-- ══ FORM ══ -->
+<!-- FORM -->
 <div class="main" id="form-section">
 
   <!-- Employee Card -->
@@ -213,13 +227,25 @@
     <div class="card-title">👤 Employee Details</div>
     <div id="loading-view" class="loading-banner"><div class="mini-spinner"></div><span>Fetching your details…</span></div>
     <div id="no-email-view" style="display:none;"><div class="no-email-banner">⚠ Invalid access link.<br>Please scan your personal QR code.</div></div>
+
+    <!-- Recognised employee -->
     <div id="prefilled-view" style="display:none;">
       <div class="prefill-badge"><span class="pb-icon">✅</span><div><div class="pb-text">Identity verified</div><div class="pb-email" id="badge-email"></div></div></div>
       <div class="field"><label>Employee ID</label><div class="prefilled-field"><span id="pf-empCode"></span><span class="lock-icon">🔒</span></div></div>
       <div class="field"><label>Name</label><div class="prefilled-field"><span id="pf-name"></span><span class="lock-icon">🔒</span></div></div>
       <div class="field"><label>Department</label><div class="prefilled-field"><span id="pf-dept"></span><span class="lock-icon">🔒</span></div></div>
       <div class="field"><label>Position</label><div class="prefilled-field"><span id="pf-pos"></span><span class="lock-icon">🔒</span></div></div>
+      <!-- Shift badge shown after lookup -->
+      <div id="shift-badge" class="shift-badge" style="display:none;">
+        <span class="sb-icon" id="shift-icon"></span>
+        <div class="sb-info">
+          <div class="sb-title" id="shift-title"></div>
+          <div class="sb-sub" id="shift-sub"></div>
+        </div>
+      </div>
     </div>
+
+    <!-- Unrecognised email -->
     <div id="manual-view" style="display:none;">
       <div class="not-found-banner">⚠ Email <strong id="unknown-email"></strong> not registered. Contact HR or fill manually.</div>
       <div class="field"><label>Employee ID</label><input type="text" id="empCode" placeholder="e.g. LHR001" autocomplete="off" autocapitalize="characters" spellcheck="false"><div class="field-error" id="err-empCode"></div></div>
@@ -236,13 +262,17 @@
       <div class="type-btn active-in"  id="btn-checkin"  onclick="selectType('Check-in')"><span class="t-icon">🟢</span><span class="t-label">Check In</span></div>
       <div class="type-btn" id="btn-checkout" onclick="selectType('Check-out')"><span class="t-icon">🔴</span><span class="t-label">Check Out</span></div>
     </div>
+    <!-- Expected check-out notice (shown only for 12hr shift on check-in) -->
+    <div class="checkout-notice" id="checkout-notice">
+      <div class="cn-label">⏰ Expected Check-Out Time</div>
+      <div class="cn-time" id="cn-time">—</div>
+      <div class="cn-sub" id="cn-sub">Based on your 12-hour shift</div>
+    </div>
   </div>
 
   <!-- Live Selfie -->
   <div class="card" id="selfie-card" style="display:none;">
     <div class="card-title">🤳 Live Selfie</div>
-
-    <!-- Step 1: Placeholder -->
     <div id="selfie-placeholder" class="selfie-area">
       <div class="selfie-placeholder" onclick="openCamera()">
         <span class="sp-icon">📷</span>
@@ -251,8 +281,6 @@
         <button class="selfie-btn" onclick="openCamera();event.stopPropagation();">📷 Open Camera</button>
       </div>
     </div>
-
-    <!-- Step 2: Camera live view -->
     <div id="camera-view" class="selfie-area camera-view">
       <video id="camera-video" autoplay playsinline muted></video>
       <canvas id="camera-canvas"></canvas>
@@ -261,14 +289,11 @@
         <button class="capture-btn" onclick="capturePhoto()" title="Take Photo">📸</button>
       </div>
     </div>
-
-    <!-- Step 3: Preview captured photo -->
     <div id="photo-preview-wrap" class="selfie-area photo-preview">
       <img id="preview-img" src="" alt="Selfie preview">
       <div class="photo-ok">✅ Selfie captured</div>
       <span class="retake-link" onclick="retakePhoto()">Retake photo</span>
     </div>
-
     <div class="field-error" id="err-selfie" style="margin-top:8px;"></div>
   </div>
 
@@ -288,7 +313,6 @@
 
   <input type="hidden" id="latitude">
   <input type="hidden" id="longitude">
-
   <div class="gold-divider" id="submit-divider" style="display:none;"></div>
   <button class="submit-btn" id="submit-btn" style="display:none;" onclick="submitForm()">Mark Attendance</button>
 </div>
@@ -299,11 +323,18 @@
   <div class="success-title" id="success-title"></div>
   <div class="success-sub"   id="success-sub"></div>
   <img id="success-selfie" class="success-selfie" src="" alt="Your selfie" style="display:none;">
+  <!-- Expected checkout box (shown only on check-in for 12hr shift) -->
+  <div class="success-checkout-box" id="success-checkout-box" style="display:none;">
+    <div class="scb-label">⏰ Your Expected Check-Out Time</div>
+    <div class="scb-time" id="scb-time"></div>
+    <div class="scb-note">12-Hour Shift · Please check out at this time</div>
+  </div>
   <div class="success-card">
     <div class="success-row"><span class="sk">Name</span>        <span class="sv" id="s-name"></span></div>
     <div class="success-row"><span class="sk">Employee ID</span> <span class="sv" id="s-code"></span></div>
     <div class="success-row"><span class="sk">Department</span>  <span class="sv" id="s-dept"></span></div>
     <div class="success-row"><span class="sk">Position</span>    <span class="sv" id="s-pos"></span></div>
+    <div class="success-row"><span class="sk">Shift</span>       <span class="sv" id="s-shift"></span></div>
     <div class="success-row"><span class="sk">Type</span>        <span class="sv" id="s-type"></span></div>
     <div class="success-row"><span class="sk">Time</span>        <span class="sv" id="s-time"></span></div>
     <div class="success-row"><span class="sk">Status</span>      <span class="sv" id="s-status"></span></div>
@@ -317,7 +348,6 @@
 </div>
 
 <script>
-// ── STATE ────────────────────────────────────────────────────
 var EMP              = null;
 var USER_EMAIL       = "";
 var currentType      = 'Check-in';
@@ -326,7 +356,6 @@ var photoCaptured    = false;
 var photoBase64      = "";
 var cameraStream     = null;
 
-// ── INIT ─────────────────────────────────────────────────────
 document.addEventListener('DOMContentLoaded', function() {
   updateDateTime();
   setInterval(updateDateTime, 1000);
@@ -340,7 +369,6 @@ document.addEventListener('DOMContentLoaded', function() {
     return;
   }
 
-  // Lookup employee from Apps Script
   fetch(APPS_SCRIPT_URL + "?action=lookup&email=" + encodeURIComponent(USER_EMAIL))
     .then(function(r){ return r.json(); })
     .then(function(data) {
@@ -351,7 +379,7 @@ document.addEventListener('DOMContentLoaded', function() {
       captureLocation();
     })
     .catch(function() {
-      EMP = { found:false, empCode:"", name:"", department:"", position:"", email:USER_EMAIL };
+      EMP = { found:false, empCode:"", name:"", department:"", position:"", email:USER_EMAIL, shiftHours:8 };
       document.getElementById('loading-view').style.display = 'none';
       renderEmployeeView();
       showFormCards();
@@ -368,6 +396,18 @@ function renderEmployeeView() {
     document.getElementById('pf-name').textContent     = EMP.name;
     document.getElementById('pf-dept').textContent     = EMP.department;
     document.getElementById('pf-pos').textContent      = EMP.position;
+
+    // Show shift badge
+    var shiftHours = EMP.shiftHours || 8;
+    var badge      = document.getElementById('shift-badge');
+    var is12hr     = shiftHours >= 12;
+    badge.className = 'shift-badge ' + (is12hr ? 'shift-12' : 'shift-8');
+    badge.style.display = 'flex';
+    document.getElementById('shift-icon').textContent = is12hr ? '🌙' : '☀️';
+    document.getElementById('shift-title').textContent = shiftHours + '-Hour Shift';
+    document.getElementById('shift-sub').textContent   = is12hr
+      ? 'Check-in: Any time · Check-out: 12 hours after punch-in'
+      : 'Standard shift · Check-in by 9:30 AM · Check-out after 6:30 PM';
   } else {
     document.getElementById('manual-view').style.display = 'block';
     document.getElementById('unknown-email').textContent = USER_EMAIL;
@@ -388,26 +428,29 @@ function updateDateTime() {
   document.getElementById('live-time').textContent = now.toLocaleTimeString('en-IN',{hour:'2-digit',minute:'2-digit',second:'2-digit',hour12:false});
 }
 
-// ── TYPE ─────────────────────────────────────────────────────
 function selectType(type) {
   currentType = type;
   document.getElementById('btn-checkin').className  = type==='Check-in'  ? 'type-btn active-in'  : 'type-btn';
   document.getElementById('btn-checkout').className = type==='Check-out' ? 'type-btn active-out' : 'type-btn';
+
+  // Show expected check-out for 12hr shift employees on check-in
+  var notice    = document.getElementById('checkout-notice');
+  var shiftHours = EMP && EMP.shiftHours ? EMP.shiftHours : 8;
+  if (type === 'Check-in' && shiftHours >= 12) {
+    var now       = new Date();
+    var checkout  = new Date(now.getTime() + shiftHours * 60 * 60 * 1000);
+    document.getElementById('cn-time').textContent = checkout.toLocaleTimeString('en-IN',{hour:'2-digit',minute:'2-digit',hour12:true});
+    document.getElementById('cn-sub').textContent  = 'Based on your ' + shiftHours + '-hour shift — check out at this time';
+    notice.style.display = 'block';
+  } else {
+    notice.style.display = 'none';
+  }
 }
 
-// ── CAMERA ───────────────────────────────────────────────────
+// Camera
 function openCamera() {
   document.getElementById('err-selfie').textContent = '';
-  var constraints = {
-    video: {
-      facingMode: 'user', // Front camera (selfie)
-      width:  { ideal: 640 },
-      height: { ideal: 480 }
-    },
-    audio: false
-  };
-
-  navigator.mediaDevices.getUserMedia(constraints)
+  navigator.mediaDevices.getUserMedia({video:{facingMode:'user',width:{ideal:640},height:{ideal:480}},audio:false})
     .then(function(stream) {
       cameraStream = stream;
       var video = document.getElementById('camera-video');
@@ -415,61 +458,44 @@ function openCamera() {
       document.getElementById('selfie-placeholder').style.display = 'none';
       document.getElementById('camera-view').classList.add('active');
     })
-    .catch(function(err) {
+    .catch(function() {
       showToast('Camera access denied. Please allow camera permission.', 'error');
-      document.getElementById('err-selfie').textContent = 'Camera permission is required. Please allow and try again.';
+      document.getElementById('err-selfie').textContent = 'Camera permission is required.';
     });
 }
 
 function capturePhoto() {
-  var video  = document.getElementById('camera-video');
-  var canvas = document.getElementById('camera-canvas');
-  canvas.width  = video.videoWidth  || 640;
-  canvas.height = video.videoHeight || 480;
-  var ctx = canvas.getContext('2d');
-  // Mirror the image (since video is mirrored for selfie view)
-  ctx.translate(canvas.width, 0);
-  ctx.scale(-1, 1);
-  ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
-
-  // Convert to base64 JPEG (compressed)
-  photoBase64 = canvas.toDataURL('image/jpeg', 0.7);
-  photoCaptured = true;
-
-  // Stop camera
+  var video=document.getElementById('camera-video'), canvas=document.getElementById('camera-canvas');
+  canvas.width=video.videoWidth||640; canvas.height=video.videoHeight||480;
+  var ctx=canvas.getContext('2d');
+  ctx.translate(canvas.width,0); ctx.scale(-1,1);
+  ctx.drawImage(video,0,0,canvas.width,canvas.height);
+  photoBase64=canvas.toDataURL('image/jpeg',0.7); photoCaptured=true;
   stopCamera();
-
-  // Show preview
-  document.getElementById('preview-img').src = photoBase64;
+  document.getElementById('preview-img').src=photoBase64;
   document.getElementById('camera-view').classList.remove('active');
   document.getElementById('photo-preview-wrap').classList.add('active');
-  document.getElementById('err-selfie').textContent = '';
-
-  // Show on success screen
-  document.getElementById('success-selfie').src = photoBase64;
+  document.getElementById('err-selfie').textContent='';
+  document.getElementById('success-selfie').src=photoBase64;
 }
 
 function retakePhoto() {
-  photoCaptured = false;
-  photoBase64   = "";
+  photoCaptured=false; photoBase64="";
   document.getElementById('photo-preview-wrap').classList.remove('active');
-  document.getElementById('selfie-placeholder').style.display = 'flex';
+  document.getElementById('selfie-placeholder').style.display='flex';
 }
 
 function closeCamera() {
   stopCamera();
   document.getElementById('camera-view').classList.remove('active');
-  document.getElementById('selfie-placeholder').style.display = 'flex';
+  document.getElementById('selfie-placeholder').style.display='flex';
 }
 
 function stopCamera() {
-  if (cameraStream) {
-    cameraStream.getTracks().forEach(function(t){ t.stop(); });
-    cameraStream = null;
-  }
+  if(cameraStream){cameraStream.getTracks().forEach(function(t){t.stop();});cameraStream=null;}
 }
 
-// ── LOCATION ─────────────────────────────────────────────────
+// Location
 function captureLocation() {
   var card=document.getElementById('loc-card'),icon=document.getElementById('loc-icon'),
       status=document.getElementById('loc-status'),coords=document.getElementById('loc-coords'),
@@ -503,7 +529,6 @@ function setLocError(msg){
   locationCaptured=false;
 }
 
-// ── FORM DATA ────────────────────────────────────────────────
 function getFormData(){
   if(EMP&&EMP.found) return {empCode:EMP.empCode,name:EMP.name,department:EMP.department,position:EMP.position,email:USER_EMAIL};
   return {
@@ -524,63 +549,43 @@ function validateForm(){
       else{el.classList.remove('invalid');document.getElementById(f[1]).textContent='';}
     });
   }
-  if(!photoCaptured){
-    document.getElementById('err-selfie').textContent='Live selfie is required. Tap Open Camera above.';
-    ok=false;
-  }
-  if(!locationCaptured){
-    document.getElementById('err-location').textContent='Location is required. Tap the card above.';
-    ok=false;
-  }
+  if(!photoCaptured){document.getElementById('err-selfie').textContent='Live selfie is required. Tap Open Camera above.';ok=false;}
+  if(!locationCaptured){document.getElementById('err-location').textContent='Location is required. Tap the card above.';ok=false;}
   return ok;
 }
 
-// ── SUBMIT ───────────────────────────────────────────────────
 function submitForm(){
   if(!validateForm()) return;
-
   var btn=document.getElementById('submit-btn');
-  btn.disabled=true;
-  btn.innerHTML='<span class="spinner"></span>Submitting…';
+  btn.disabled=true; btn.innerHTML='<span class="spinner"></span>Submitting…';
   document.getElementById('overlay').classList.add('show');
   document.getElementById('overlay-text').textContent='Uploading selfie…';
   document.getElementById('overlay-progress').textContent='This may take a few seconds';
-
   var fd=getFormData();
-  var payload={
-    empCode:     fd.empCode,
-    name:        fd.name,
-    department:  fd.department,
-    position:    fd.position,
-    email:       fd.email,
-    type:        currentType,
-    latitude:    document.getElementById('latitude').value,
-    longitude:   document.getElementById('longitude').value,
-    photoBase64: photoBase64
-  };
-
-  fetch(APPS_SCRIPT_URL, {
+  fetch(APPS_SCRIPT_URL,{
     method:'POST',
-    body: JSON.stringify(payload),
+    body:JSON.stringify({
+      empCode:fd.empCode,name:fd.name,department:fd.department,
+      position:fd.position,email:fd.email,type:currentType,
+      latitude:document.getElementById('latitude').value,
+      longitude:document.getElementById('longitude').value,
+      photoBase64:photoBase64
+    }),
     headers:{'Content-Type':'text/plain'}
   })
-  .then(function(r){ return r.json(); })
+  .then(function(r){return r.json();})
   .then(function(data){
     document.getElementById('overlay').classList.remove('show');
-    if(data.status==='success') showSuccess(fd, data);
-    else{
-      showToast(data.message||'Error. Try again.','error');
-      btn.disabled=false; btn.textContent='Mark Attendance';
-    }
+    if(data.status==='success') showSuccess(fd,data);
+    else{showToast(data.message||'Error. Try again.','error');btn.disabled=false;btn.textContent='Mark Attendance';}
   })
   .catch(function(){
     document.getElementById('overlay').classList.remove('show');
     showToast('Network error. Check connection and try again.','error');
-    btn.disabled=false; btn.textContent='Mark Attendance';
+    btn.disabled=false;btn.textContent='Mark Attendance';
   });
 }
 
-// ── SUCCESS ──────────────────────────────────────────────────
 function showSuccess(fd,data){
   stopCamera();
   document.getElementById('form-section').style.display='none';
@@ -589,46 +594,52 @@ function showSuccess(fd,data){
 
   var present=data.attendanceStatus==='Present';
   var badge=document.getElementById('success-badge');
-  badge.textContent=present?'✅':'⚠️';
-  badge.style.background=present?'#dcfce7':'#fef3cd';
+  badge.textContent=present?'✅':'⚠️'; badge.style.background=present?'#dcfce7':'#fef3cd';
   document.getElementById('success-title').textContent=currentType==='Check-in'?'Checked In!':'Checked Out!';
   document.getElementById('success-sub').textContent=present
     ?'Attendance recorded. Have a productive day!'
     :'Recorded — you appear to be outside office premises.';
 
-  // Show selfie on success screen
   var selfieEl=document.getElementById('success-selfie');
   selfieEl.src=photoBase64; selfieEl.style.display='block';
 
-  document.getElementById('s-name').textContent=fd.name;
-  document.getElementById('s-code').textContent=fd.empCode;
-  document.getElementById('s-dept').textContent=fd.department;
-  document.getElementById('s-pos').textContent=fd.position||'—';
-  document.getElementById('s-type').textContent=currentType;
-  document.getElementById('s-time').textContent=new Date().toLocaleTimeString('en-IN',{hour:'2-digit',minute:'2-digit',hour12:true});
-  var st=document.getElementById('s-status');
-  st.textContent=data.attendanceStatus;
-  st.className='sv '+(present?'present':'outside');
+  // Show expected checkout box for 12hr shift on check-in
+  var shiftHours = data.shiftHours || (EMP&&EMP.shiftHours) || 8;
+  var checkoutBox = document.getElementById('success-checkout-box');
+  if (currentType === 'Check-in' && shiftHours >= 12) {
+    var checkout = new Date(new Date().getTime() + shiftHours*60*60*1000);
+    document.getElementById('scb-time').textContent = checkout.toLocaleTimeString('en-IN',{hour:'2-digit',minute:'2-digit',hour12:true});
+    checkoutBox.style.display = 'block';
+  } else {
+    checkoutBox.style.display = 'none';
+  }
+
+  document.getElementById('s-name').textContent  = fd.name;
+  document.getElementById('s-code').textContent  = fd.empCode;
+  document.getElementById('s-dept').textContent  = fd.department;
+  document.getElementById('s-pos').textContent   = fd.position||'—';
+  document.getElementById('s-shift').textContent = shiftHours + '-Hour Shift';
+  document.getElementById('s-type').textContent  = currentType;
+  document.getElementById('s-time').textContent  = new Date().toLocaleTimeString('en-IN',{hour:'2-digit',minute:'2-digit',hour12:true});
+  var st=document.getElementById('s-status'); st.textContent=data.attendanceStatus; st.className='sv '+(present?'present':'outside');
 }
 
 function resetForm(){
-  stopCamera();
-  photoCaptured=false; photoBase64="";
+  stopCamera(); photoCaptured=false; photoBase64="";
   document.getElementById('success-section').classList.remove('show');
   document.getElementById('form-section').style.display='block';
   document.getElementById('footer-bar').style.display='block';
   document.getElementById('photo-preview-wrap').classList.remove('active');
   document.getElementById('selfie-placeholder').style.display='flex';
-  var btn=document.getElementById('submit-btn');
-  btn.disabled=false; btn.textContent='Mark Attendance';
-  selectType('Check-in');
-  captureLocation();
+  document.getElementById('checkout-notice').style.display='none';
+  document.getElementById('success-checkout-box').style.display='none';
+  var btn=document.getElementById('submit-btn'); btn.disabled=false; btn.textContent='Mark Attendance';
+  selectType('Check-in'); captureLocation();
 }
 
 function showToast(msg,type){
   var wrap=document.getElementById('toast-wrap'),t=document.createElement('div');
-  t.className='toast '+(type||'');
-  t.textContent=(type==='error'?'⚠ ':'ℹ ')+msg;
+  t.className='toast '+(type||''); t.textContent=(type==='error'?'⚠ ':'ℹ ')+msg;
   wrap.appendChild(t);
   setTimeout(function(){t.style.opacity='0';t.style.transition='opacity 0.4s';setTimeout(function(){t.remove();},400);},4500);
 }
