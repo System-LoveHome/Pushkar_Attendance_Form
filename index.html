@@ -49,31 +49,19 @@
   input[type="text"]::placeholder{color:#b0b5c0;font-weight:400;}
   input.invalid{border-color:var(--red)!important;}
   .field-error{font-size:11px;color:var(--red);margin-top:4px;font-weight:500;}
-
-  /* SHIFT BADGE */
-  .shift-badge{
-    display:flex;align-items:center;gap:10px;
-    border-radius:10px;padding:10px 14px;margin-top:12px;
-  }
+  .shift-badge{display:flex;align-items:center;gap:10px;border-radius:10px;padding:10px 14px;margin-top:12px;}
   .shift-badge.shift-8{background:#f0fdf4;border:1.5px solid #16a34a;}
   .shift-badge.shift-12{background:#fffbeb;border:1.5px solid #d97706;}
   .shift-badge .sb-icon{font-size:20px;}
   .shift-badge .sb-info{flex:1;}
   .shift-badge .sb-title{font-size:12px;font-weight:700;}
-  .shift-badge.shift-8  .sb-title{color:#16a34a;}
+  .shift-badge.shift-8 .sb-title{color:#16a34a;}
   .shift-badge.shift-12 .sb-title{color:#d97706;}
   .shift-badge .sb-sub{font-size:11px;color:var(--muted);margin-top:2px;}
-
-  /* EXPECTED CHECKOUT NOTICE */
-  .checkout-notice{
-    background:#eff6ff;border:1.5px solid #3b82f6;border-radius:10px;
-    padding:10px 14px;margin-top:10px;display:none;
-  }
+  .checkout-notice{background:#eff6ff;border:1.5px solid #3b82f6;border-radius:10px;padding:10px 14px;margin-top:10px;display:none;}
   .checkout-notice .cn-label{font-size:11px;font-weight:600;color:#1d4ed8;margin-bottom:2px;}
   .checkout-notice .cn-time{font-size:18px;font-weight:800;color:#1d4ed8;}
   .checkout-notice .cn-sub{font-size:11px;color:var(--muted);margin-top:2px;}
-
-  /* TYPE TOGGLE */
   .type-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
   .type-btn{border:2px solid var(--border);border-radius:12px;padding:14px 10px;text-align:center;cursor:pointer;background:var(--bg);transition:all .2s;user-select:none;}
   .type-btn .t-icon{font-size:24px;display:block;margin-bottom:5px;}
@@ -82,8 +70,6 @@
   .type-btn.active-in .t-label{color:#16a34a;}
   .type-btn.active-out{border-color:var(--red);background:var(--red-light);box-shadow:0 0 0 3px rgba(200,16,46,0.1);}
   .type-btn.active-out .t-label{color:var(--red);}
-
-  /* LOCATION */
   .loc-card{display:flex;align-items:center;gap:12px;padding:14px;border:2px dashed var(--border);border-radius:12px;cursor:pointer;background:var(--bg);transition:all .2s;}
   .loc-card.captured{border:2px solid #16a34a;background:#f0fdf4;cursor:default;}
   .loc-card.error-state{border:2px solid var(--red);background:var(--red-light);}
@@ -99,11 +85,11 @@
   .loc-card.error-state .loc-status{color:var(--red);}
   .loc-coords{font-size:11px;color:var(--muted);margin-top:2px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
   .loc-action{font-size:11px;font-weight:700;color:var(--red);letter-spacing:1px;text-transform:uppercase;flex-shrink:0;}
-
-  /* SELFIE */
+  .perm-help{background:#fffbeb;border:1.5px solid #fcd34d;border-radius:10px;padding:12px 14px;margin-top:10px;font-size:11px;color:#92400e;line-height:1.6;display:none;}
+  .perm-help.show{display:block;}
+  .perm-help b{color:#78350f;}
   .selfie-area{border:2px dashed var(--border);border-radius:12px;overflow:hidden;background:var(--bg);position:relative;transition:all .2s;}
   .selfie-area.captured{border:2px solid #16a34a;background:#f0fdf4;}
-  .selfie-area.error-state{border:2px solid var(--red);}
   .selfie-placeholder{display:flex;flex-direction:column;align-items:center;justify-content:center;padding:28px 20px;cursor:pointer;gap:10px;}
   .selfie-placeholder .sp-icon{font-size:36px;}
   .selfie-placeholder .sp-title{font-size:13px;font-weight:700;color:var(--muted);}
@@ -122,8 +108,6 @@
   .photo-ok{font-size:12px;font-weight:600;color:#16a34a;display:flex;align-items:center;gap:6px;}
   .retake-link{font-size:11px;color:var(--muted);cursor:pointer;text-decoration:underline;margin-top:2px;}
   #camera-canvas{display:none;}
-
-  /* SUBMIT */
   .gold-divider{height:2px;background:var(--gold-grad);border-radius:2px;margin:6px 0 16px;opacity:.6;}
   .submit-btn{width:100%;background:var(--red-grad);border:none;border-radius:var(--radius);padding:16px;font-family:'Poppins',sans-serif;font-size:15px;font-weight:700;letter-spacing:1px;color:#fff;cursor:pointer;position:relative;overflow:hidden;box-shadow:0 4px 20px rgba(200,16,46,0.35);transition:all .2s;}
   .submit-btn:active{transform:scale(.98);}
@@ -131,8 +115,6 @@
   @keyframes shimmer{to{left:150%;}}
   .submit-btn:disabled{background:#e5e7eb;color:#9ca3af;box-shadow:none;cursor:not-allowed;transform:none;}
   .submit-btn:disabled::before{display:none;}
-
-  /* SUCCESS */
   .success-screen{display:none;flex-direction:column;align-items:center;text-align:center;padding:30px 20px 60px;max-width:480px;margin:0 auto;width:100%;}
   .success-screen.show{display:flex;}
   .success-badge{width:90px;height:90px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:40px;margin-bottom:20px;animation:popIn .45s cubic-bezier(.34,1.56,.64,1);}
@@ -146,22 +128,14 @@
   .success-row .sk{color:var(--muted);font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.5px;}
   .success-row .sv{font-weight:600;color:var(--text);}
   .sv.present{color:#16a34a;}.sv.outside{color:var(--gold);}
-  /* Expected checkout highlight on success */
-  .success-checkout-box{
-    background:#fffbeb;border:1.5px solid #d97706;border-radius:10px;
-    padding:12px 16px;margin-top:14px;text-align:center;width:100%;
-  }
+  .success-checkout-box{background:#fffbeb;border:1.5px solid #d97706;border-radius:10px;padding:12px 16px;margin-top:14px;text-align:center;width:100%;}
   .success-checkout-box .scb-label{font-size:11px;color:#92400e;font-weight:600;margin-bottom:2px;}
   .success-checkout-box .scb-time{font-size:22px;font-weight:800;color:#d97706;}
   .success-checkout-box .scb-note{font-size:10px;color:var(--muted);margin-top:2px;}
   .again-btn{margin-top:24px;background:transparent;border:2px solid var(--border);border-radius:var(--radius);padding:12px 30px;font-family:'Poppins',sans-serif;font-size:13px;font-weight:600;color:var(--muted);cursor:pointer;}
-
-  /* FOOTER */
   .footer{background:var(--white);border-top:1px solid var(--border);padding:12px 20px;text-align:center;}
   .footer-tagline{font-family:'Noto Sans Devanagari',sans-serif;font-size:12px;color:var(--gold);font-weight:500;}
   .footer-sub{font-size:10px;color:var(--muted);margin-top:2px;}
-
-  /* OVERLAY */
   .overlay{display:none;position:fixed;inset:0;background:rgba(255,255,255,0.88);backdrop-filter:blur(4px);z-index:500;align-items:center;justify-content:center;flex-direction:column;gap:16px;}
   .overlay.show{display:flex;}
   .big-spinner{width:44px;height:44px;border:3px solid var(--border);border-top-color:var(--red);border-radius:50%;animation:spin .75s linear infinite;}
@@ -179,9 +153,11 @@
 </head>
 <body>
 
+<!-- ══ EDIT THIS: paste your Apps Script Web App URL ══ -->
 <script>
-  var APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxKrkb8AXKVTAVncCRuwUYGB8UtqlTUMjs9QiStcSaVH3YbVmyyC2obovJaCQnB3Hc2/exec";
+  var APPS_SCRIPT_URL = "YOUR_APPS_SCRIPT_URL_HERE";
 </script>
+<!-- ══════════════════════════════════════════════════ -->
 
 <div class="overlay" id="overlay">
   <div class="big-spinner"></div>
@@ -191,7 +167,6 @@
 </div>
 <div class="toast-wrap" id="toast-wrap"></div>
 
-<!-- HEADER -->
 <div class="header">
   <div class="header-inner">
     <svg class="logo-mark" viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -203,7 +178,7 @@
       <rect x="30" y="27" width="3" height="7" fill="#d4a017"/>
     </svg>
     <div class="header-text">
-      <div class="brand-name">LOVE<span>HOME</span><sup style="font-size:10px;vertical-align:super;color:rgba(255,255,255,0.6);font-weight:400">®</sup></div>
+      <div class="brand-name">LOVE<span>HOME</span><sup style="font-size:10px;vertical-align:super;color:rgba(255,255,255,0.6);font-weight:400">&reg;</sup></div>
       <div class="brand-tagline">प्यारा घर, प्यार से</div>
     </div>
     <div style="text-align:right;">
@@ -219,33 +194,22 @@
   <span id="live-time">—:—</span>
 </div>
 
-<!-- FORM -->
 <div class="main" id="form-section">
-
-  <!-- Employee Card -->
   <div class="card">
     <div class="card-title">👤 Employee Details</div>
     <div id="loading-view" class="loading-banner"><div class="mini-spinner"></div><span>Fetching your details…</span></div>
     <div id="no-email-view" style="display:none;"><div class="no-email-banner">⚠ Invalid access link.<br>Please scan your personal QR code.</div></div>
-
-    <!-- Recognised employee -->
     <div id="prefilled-view" style="display:none;">
       <div class="prefill-badge"><span class="pb-icon">✅</span><div><div class="pb-text">Identity verified</div><div class="pb-email" id="badge-email"></div></div></div>
       <div class="field"><label>Employee ID</label><div class="prefilled-field"><span id="pf-empCode"></span><span class="lock-icon">🔒</span></div></div>
       <div class="field"><label>Name</label><div class="prefilled-field"><span id="pf-name"></span><span class="lock-icon">🔒</span></div></div>
       <div class="field"><label>Department</label><div class="prefilled-field"><span id="pf-dept"></span><span class="lock-icon">🔒</span></div></div>
       <div class="field"><label>Position</label><div class="prefilled-field"><span id="pf-pos"></span><span class="lock-icon">🔒</span></div></div>
-      <!-- Shift badge shown after lookup -->
       <div id="shift-badge" class="shift-badge" style="display:none;">
         <span class="sb-icon" id="shift-icon"></span>
-        <div class="sb-info">
-          <div class="sb-title" id="shift-title"></div>
-          <div class="sb-sub" id="shift-sub"></div>
-        </div>
+        <div class="sb-info"><div class="sb-title" id="shift-title"></div><div class="sb-sub" id="shift-sub"></div></div>
       </div>
     </div>
-
-    <!-- Unrecognised email -->
     <div id="manual-view" style="display:none;">
       <div class="not-found-banner">⚠ Email <strong id="unknown-email"></strong> not registered. Contact HR or fill manually.</div>
       <div class="field"><label>Employee ID</label><input type="text" id="empCode" placeholder="e.g. LHR001" autocomplete="off" autocapitalize="characters" spellcheck="false"><div class="field-error" id="err-empCode"></div></div>
@@ -255,14 +219,12 @@
     </div>
   </div>
 
-  <!-- Attendance Type -->
   <div class="card" id="attendance-card" style="display:none;">
     <div class="card-title">🕐 Attendance Type</div>
     <div class="type-grid">
       <div class="type-btn active-in"  id="btn-checkin"  onclick="selectType('Check-in')"><span class="t-icon">🟢</span><span class="t-label">Check In</span></div>
       <div class="type-btn" id="btn-checkout" onclick="selectType('Check-out')"><span class="t-icon">🔴</span><span class="t-label">Check Out</span></div>
     </div>
-    <!-- Expected check-out notice (shown only for 12hr shift on check-in) -->
     <div class="checkout-notice" id="checkout-notice">
       <div class="cn-label">⏰ Expected Check-Out Time</div>
       <div class="cn-time" id="cn-time">—</div>
@@ -270,7 +232,6 @@
     </div>
   </div>
 
-  <!-- Live Selfie -->
   <div class="card" id="selfie-card" style="display:none;">
     <div class="card-title">🤳 Live Selfie</div>
     <div id="selfie-placeholder" class="selfie-area">
@@ -297,7 +258,6 @@
     <div class="field-error" id="err-selfie" style="margin-top:8px;"></div>
   </div>
 
-  <!-- Location -->
   <div class="card" id="location-card-wrap" style="display:none;">
     <div class="card-title">📍 Location Verification</div>
     <div class="loc-card" id="loc-card" onclick="captureLocation()">
@@ -309,21 +269,27 @@
       <div class="loc-action" id="loc-action">GET</div>
     </div>
     <div class="field-error" id="err-location" style="margin-top:8px;"></div>
+    <div class="perm-help" id="perm-help">
+      <b>📍 Location blocked? Fix it in 3 steps:</b><br>
+      1. Tap the <b>🔒 lock icon</b> next to the website address at the top<br>
+      2. Tap <b>Permissions</b> → <b>Location</b> → set to <b>Allow</b><br>
+      3. Come back and tap <b>RETRY</b><br>
+      <span style="color:#6b7280;">Also ensure phone Location (GPS) is ON and set to High Accuracy.</span>
+    </div>
   </div>
 
   <input type="hidden" id="latitude">
   <input type="hidden" id="longitude">
+  <input type="hidden" id="accuracy">
   <div class="gold-divider" id="submit-divider" style="display:none;"></div>
   <button class="submit-btn" id="submit-btn" style="display:none;" onclick="submitForm()">Mark Attendance</button>
 </div>
 
-<!-- SUCCESS -->
 <div class="success-screen" id="success-section">
   <div class="success-badge" id="success-badge"></div>
   <div class="success-title" id="success-title"></div>
   <div class="success-sub"   id="success-sub"></div>
   <img id="success-selfie" class="success-selfie" src="" alt="Your selfie" style="display:none;">
-  <!-- Expected checkout box (shown only on check-in for 12hr shift) -->
   <div class="success-checkout-box" id="success-checkout-box" style="display:none;">
     <div class="scb-label">⏰ Your Expected Check-Out Time</div>
     <div class="scb-time" id="scb-time"></div>
@@ -348,42 +314,31 @@
 </div>
 
 <script>
-var EMP              = null;
-var USER_EMAIL       = "";
-var currentType      = 'Check-in';
-var locationCaptured = false;
-var photoCaptured    = false;
-var photoBase64      = "";
-var cameraStream     = null;
+var EMP=null, USER_EMAIL="", currentType='Check-in';
+var locationCaptured=false, photoCaptured=false, photoBase64="", cameraStream=null;
+var bestAccuracy=99999, gpsWatchId=null, gpsSamples=0;
 
 document.addEventListener('DOMContentLoaded', function() {
   updateDateTime();
   setInterval(updateDateTime, 1000);
-
   var params = new URLSearchParams(window.location.search);
   USER_EMAIL = (params.get('email') || '').toLowerCase().trim();
-
   if (!USER_EMAIL) {
     document.getElementById('loading-view').style.display = 'none';
     document.getElementById('no-email-view').style.display = 'block';
     return;
   }
-
   fetch(APPS_SCRIPT_URL + "?action=lookup&email=" + encodeURIComponent(USER_EMAIL))
     .then(function(r){ return r.json(); })
     .then(function(data) {
       EMP = data;
       document.getElementById('loading-view').style.display = 'none';
-      renderEmployeeView();
-      showFormCards();
-      captureLocation();
+      renderEmployeeView(); showFormCards(); captureLocation();
     })
     .catch(function() {
       EMP = { found:false, empCode:"", name:"", department:"", position:"", email:USER_EMAIL, shiftHours:8 };
       document.getElementById('loading-view').style.display = 'none';
-      renderEmployeeView();
-      showFormCards();
-      captureLocation();
+      renderEmployeeView(); showFormCards(); captureLocation();
       showToast('Could not fetch details. Fill manually.', 'error');
     });
 });
@@ -396,16 +351,14 @@ function renderEmployeeView() {
     document.getElementById('pf-name').textContent     = EMP.name;
     document.getElementById('pf-dept').textContent     = EMP.department;
     document.getElementById('pf-pos').textContent      = EMP.position;
-
-    // Show shift badge
     var shiftHours = EMP.shiftHours || 8;
-    var badge      = document.getElementById('shift-badge');
-    var is12hr     = shiftHours >= 12;
+    var badge = document.getElementById('shift-badge');
+    var is12hr = shiftHours >= 12;
     badge.className = 'shift-badge ' + (is12hr ? 'shift-12' : 'shift-8');
     badge.style.display = 'flex';
     document.getElementById('shift-icon').textContent = is12hr ? '🌙' : '☀️';
     document.getElementById('shift-title').textContent = shiftHours + '-Hour Shift';
-    document.getElementById('shift-sub').textContent   = is12hr
+    document.getElementById('shift-sub').textContent = is12hr
       ? 'Check-in: Any time · Check-out: 12 hours after punch-in'
       : 'Standard shift · Check-in by 9:30 AM · Check-out after 6:30 PM';
   } else {
@@ -432,29 +385,26 @@ function selectType(type) {
   currentType = type;
   document.getElementById('btn-checkin').className  = type==='Check-in'  ? 'type-btn active-in'  : 'type-btn';
   document.getElementById('btn-checkout').className = type==='Check-out' ? 'type-btn active-out' : 'type-btn';
-
-  // Show expected check-out for 12hr shift employees on check-in
-  var notice    = document.getElementById('checkout-notice');
+  var notice = document.getElementById('checkout-notice');
   var shiftHours = EMP && EMP.shiftHours ? EMP.shiftHours : 8;
   if (type === 'Check-in' && shiftHours >= 12) {
-    var now       = new Date();
-    var checkout  = new Date(now.getTime() + shiftHours * 60 * 60 * 1000);
+    var now = new Date();
+    var checkout = new Date(now.getTime() + shiftHours*60*60*1000);
     document.getElementById('cn-time').textContent = checkout.toLocaleTimeString('en-IN',{hour:'2-digit',minute:'2-digit',hour12:true});
-    document.getElementById('cn-sub').textContent  = 'Based on your ' + shiftHours + '-hour shift — check out at this time';
+    document.getElementById('cn-sub').textContent = 'Based on your ' + shiftHours + '-hour shift — check out at this time';
     notice.style.display = 'block';
   } else {
     notice.style.display = 'none';
   }
 }
 
-// Camera
+// ── CAMERA ──
 function openCamera() {
   document.getElementById('err-selfie').textContent = '';
   navigator.mediaDevices.getUserMedia({video:{facingMode:'user',width:{ideal:640},height:{ideal:480}},audio:false})
     .then(function(stream) {
       cameraStream = stream;
-      var video = document.getElementById('camera-video');
-      video.srcObject = stream;
+      document.getElementById('camera-video').srcObject = stream;
       document.getElementById('selfie-placeholder').style.display = 'none';
       document.getElementById('camera-view').classList.add('active');
     })
@@ -463,7 +413,6 @@ function openCamera() {
       document.getElementById('err-selfie').textContent = 'Camera permission is required.';
     });
 }
-
 function capturePhoto() {
   var video=document.getElementById('camera-video'), canvas=document.getElementById('camera-canvas');
   canvas.width=video.videoWidth||640; canvas.height=video.videoHeight||480;
@@ -478,47 +427,89 @@ function capturePhoto() {
   document.getElementById('err-selfie').textContent='';
   document.getElementById('success-selfie').src=photoBase64;
 }
-
 function retakePhoto() {
   photoCaptured=false; photoBase64="";
   document.getElementById('photo-preview-wrap').classList.remove('active');
   document.getElementById('selfie-placeholder').style.display='flex';
 }
-
 function closeCamera() {
   stopCamera();
   document.getElementById('camera-view').classList.remove('active');
   document.getElementById('selfie-placeholder').style.display='flex';
 }
-
 function stopCamera() {
   if(cameraStream){cameraStream.getTracks().forEach(function(t){t.stop();});cameraStream=null;}
 }
 
-// Location
+// ── LOCATION (improved: multiple readings, best-of, accuracy check) ──
 function captureLocation() {
   var card=document.getElementById('loc-card'),icon=document.getElementById('loc-icon'),
       status=document.getElementById('loc-status'),coords=document.getElementById('loc-coords'),
       action=document.getElementById('loc-action');
   card.className='loc-card loading-state'; icon.textContent='🔄';
-  status.textContent='Detecting location…'; coords.textContent='Please wait a moment';
+  status.textContent='Getting accurate location…'; coords.textContent='Please wait 5-10 sec, stay still';
   action.textContent='…'; locationCaptured=false;
+  bestAccuracy=99999; gpsSamples=0;
+  document.getElementById('perm-help').classList.remove('show');
+
   if(!navigator.geolocation){setLocError('Geolocation not supported.');return;}
-  navigator.geolocation.getCurrentPosition(
+  if(gpsWatchId!==null){ navigator.geolocation.clearWatch(gpsWatchId); }
+
+  gpsWatchId = navigator.geolocation.watchPosition(
     function(pos){
-      var lat=pos.coords.latitude.toFixed(6),lng=pos.coords.longitude.toFixed(6),acc=Math.round(pos.coords.accuracy);
-      document.getElementById('latitude').value=lat; document.getElementById('longitude').value=lng;
-      locationCaptured=true; card.className='loc-card captured'; icon.textContent='✅';
-      status.textContent='Location captured'; coords.textContent=lat+', '+lng+' (±'+acc+'m)';
-      action.textContent='RETRY'; document.getElementById('err-location').textContent='';
+      gpsSamples++;
+      var acc = pos.coords.accuracy;
+      if(acc < bestAccuracy){
+        bestAccuracy = acc;
+        var lat=pos.coords.latitude.toFixed(6), lng=pos.coords.longitude.toFixed(6);
+        document.getElementById('latitude').value=lat;
+        document.getElementById('longitude').value=lng;
+        document.getElementById('accuracy').value=Math.round(acc);
+        coords.textContent='Accuracy: ±'+Math.round(acc)+'m  (improving…)';
+      }
+      if(bestAccuracy <= 30){ finalizeLocation(); }
+      else if(gpsSamples >= 8){
+        if(bestAccuracy <= 100){ finalizeLocation(); }
+        else { finalizeLocation(true); }
+      }
     },
     function(err){
-      var msgs={1:'Permission denied. Enable location in browser.',2:'Location unavailable. Try outdoors.',3:'Timed out. Tap to retry.'};
-      setLocError(msgs[err.code]||'Location error.');
+      if(gpsWatchId!==null){navigator.geolocation.clearWatch(gpsWatchId);gpsWatchId=null;}
+      if(err.code === 1){
+        setLocError('Permission denied. See the steps below to enable location.');
+        document.getElementById('perm-help').classList.add('show');
+      } else {
+        var msgs={2:'Location unavailable. Move to open area / near window.',3:'Timed out. Tap RETRY.'};
+        setLocError(msgs[err.code]||'Location error. Tap RETRY.');
+      }
     },
-    {enableHighAccuracy:true,timeout:15000,maximumAge:0}
+    {enableHighAccuracy:true, timeout:20000, maximumAge:0}
   );
+
+  setTimeout(function(){
+    if(!locationCaptured && gpsWatchId!==null){
+      if(bestAccuracy < 99999){ finalizeLocation(bestAccuracy>100); }
+      else { setLocError('Could not get location. Move to open area and tap RETRY.'); }
+    }
+  }, 15000);
 }
+
+function finalizeLocation(poorWarning){
+  if(gpsWatchId!==null){navigator.geolocation.clearWatch(gpsWatchId);gpsWatchId=null;}
+  locationCaptured=true;
+  document.getElementById('loc-card').className='loc-card captured';
+  document.getElementById('loc-icon').textContent='✅';
+  document.getElementById('loc-status').textContent='Location captured';
+  var lat=document.getElementById('latitude').value, lng=document.getElementById('longitude').value;
+  document.getElementById('loc-coords').textContent=lat+', '+lng+'  (±'+Math.round(bestAccuracy)+'m)';
+  document.getElementById('loc-action').textContent='RETRY';
+  document.getElementById('err-location').textContent='';
+  document.getElementById('perm-help').classList.remove('show');
+  if(poorWarning){
+    showToast('GPS signal weak (±'+Math.round(bestAccuracy)+'m). For accuracy, move near a window/open area and tap RETRY.', 'error');
+  }
+}
+
 function setLocError(msg){
   document.getElementById('loc-card').className='loc-card error-state';
   document.getElementById('loc-icon').textContent='❌';
@@ -532,11 +523,11 @@ function setLocError(msg){
 function getFormData(){
   if(EMP&&EMP.found) return {empCode:EMP.empCode,name:EMP.name,department:EMP.department,position:EMP.position,email:USER_EMAIL};
   return {
-    empCode:   (document.getElementById('empCode')||{value:''}).value.trim().toUpperCase(),
-    name:      (document.getElementById('empName')||{value:''}).value.trim(),
+    empCode:(document.getElementById('empCode')||{value:''}).value.trim().toUpperCase(),
+    name:(document.getElementById('empName')||{value:''}).value.trim(),
     department:(document.getElementById('empDept')||{value:''}).value.trim(),
-    position:  (document.getElementById('empPos') ||{value:''}).value.trim(),
-    email:     USER_EMAIL
+    position:(document.getElementById('empPos')||{value:''}).value.trim(),
+    email:USER_EMAIL
   };
 }
 
@@ -565,10 +556,11 @@ function submitForm(){
   fetch(APPS_SCRIPT_URL,{
     method:'POST',
     body:JSON.stringify({
-      empCode:fd.empCode,name:fd.name,department:fd.department,
-      position:fd.position,email:fd.email,type:currentType,
+      empCode:fd.empCode,name:fd.name,department:fd.department,position:fd.position,email:fd.email,
+      type:currentType,
       latitude:document.getElementById('latitude').value,
       longitude:document.getElementById('longitude').value,
+      accuracy:document.getElementById('accuracy').value,
       photoBase64:photoBase64
     }),
     headers:{'Content-Type':'text/plain'}
@@ -591,29 +583,22 @@ function showSuccess(fd,data){
   document.getElementById('form-section').style.display='none';
   document.getElementById('footer-bar').style.display='none';
   document.getElementById('success-section').classList.add('show');
-
-  var present=data.attendanceStatus==='Present';
+  var present=data.attendanceStatus.indexOf('Present')>=0;
   var badge=document.getElementById('success-badge');
   badge.textContent=present?'✅':'⚠️'; badge.style.background=present?'#dcfce7':'#fef3cd';
   document.getElementById('success-title').textContent=currentType==='Check-in'?'Checked In!':'Checked Out!';
   document.getElementById('success-sub').textContent=present
     ?'Attendance recorded. Have a productive day!'
     :'Recorded — you appear to be outside office premises.';
-
   var selfieEl=document.getElementById('success-selfie');
   selfieEl.src=photoBase64; selfieEl.style.display='block';
-
-  // Show expected checkout box for 12hr shift on check-in
   var shiftHours = data.shiftHours || (EMP&&EMP.shiftHours) || 8;
   var checkoutBox = document.getElementById('success-checkout-box');
   if (currentType === 'Check-in' && shiftHours >= 12) {
     var checkout = new Date(new Date().getTime() + shiftHours*60*60*1000);
     document.getElementById('scb-time').textContent = checkout.toLocaleTimeString('en-IN',{hour:'2-digit',minute:'2-digit',hour12:true});
     checkoutBox.style.display = 'block';
-  } else {
-    checkoutBox.style.display = 'none';
-  }
-
+  } else { checkoutBox.style.display = 'none'; }
   document.getElementById('s-name').textContent  = fd.name;
   document.getElementById('s-code').textContent  = fd.empCode;
   document.getElementById('s-dept').textContent  = fd.department;
